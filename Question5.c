@@ -1,39 +1,44 @@
-/////////////////////////////////////////////////////////////////
-// 
-//  Required Header files
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-/////////////////////////////////////////////////////////////////
+//  File Name       : Assignment3
+//  Description     : Accept one character from user and Display if its Vowel or Display if it is not a Vowel
+//  Author          : Gitanjali Meghanath Patil
+//  Date            : 21/10/2025
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-#include<stdbool.h>
+#define TRUE 1
+#define FALSE 0
+typedef int BOOL;
 
-bool CheckEven(int iNo)
+BOOL Checkvowel(char cCheck)
 {
-    if(iNo % 2 == 0)
+    if(cCheck== 'a'|| cCheck=='e' || cCheck=='i' || cCheck== 'o' || cCheck== 'u')
     {
-        return true;
+        return TRUE;
     }
     else
     {
-        return false;
+        return FALSE;
     }
 }
 int main()
 {
-    int ivalue = 0;
-    bool bRet = false;
+    char cvalue = '\0';
+    BOOL bRet = FALSE;
 
-    printf("Enter number:");
-    scanf("%d",&ivalue);
- 
-    bRet = CheckEven(ivalue);
+    printf("Enter a Character\n");
+    scanf("%c",&cvalue);
+    
+    bRet = Checkvowel(cvalue);
 
-    if(bRet == true)
+    if(bRet == TRUE)
     {
-        printf("%d is Even Number.\n",ivalue);
+        printf("%c is vowel\n", cvalue);
     }
     else
     {
-        printf("%d is odd Number.\n",ivalue);
+        printf("%c is Not vowel\n",cvalue);
     }
 
       return 0;

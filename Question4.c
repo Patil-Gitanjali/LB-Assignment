@@ -1,35 +1,33 @@
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  File Name       : Assignment3
+//  Description     : Accept one character from user and convert its case
+//  Author          : Gitanjali Meghanath Patil
+//  Date            : 21/10/2025
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int Display(int iNo, int iFrequency)
+int DisplayConvert(char cvalue)
 {
-    int i = 0;
-
-    if(iNo<0)
+    if(cvalue >= 'A' && cvalue <= 'z')
     {
-        iNo=-iNo;
+        printf("%c\n",cvalue + 32);
     }
-    if(iFrequency<0)
+    else
     {
-       iFrequency=-iFrequency;
-    }
-    for(i=0;i<iFrequency;i++)
-    {
-        printf("%d",iNo);
+        printf("%c\n",cvalue - 32);
     }
 }
 int main()
 {
-    int ivalue = 0;
-    int iCount = 0;
+    char cvalue = '\0';
 
-    printf("Enter number:");
-    scanf("%d",&ivalue);
+    printf("Enter Character\n");
+    scanf("%c",&cvalue);
 
-    printf("Enter Frequency:\n");
-    scanf("%d",&iCount);
-
-    Display(ivalue,iCount);
+    DisplayConvert(cvalue);
 
     return 0;
-
 }

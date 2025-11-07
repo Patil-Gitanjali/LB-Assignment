@@ -1,34 +1,37 @@
-/////////////////////////////////////////////////////////////////
-// 
-//  Required Header files
+//////////////////////////////////////////////////////////////////////////////////////
 //
-/////////////////////////////////////////////////////////////////
+//  File Name       : Assignment3
+//  Description     : Accept the number from user and print even numbers of that number
+//  Author          : Gitanjali Meghanath Patil
+//  Date            : 21/10/2025
+//
+///////////////////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
 
-void Display(int iNo)
+void PrintEven(int iNo)
 {
-    int iCnt = 0;
-    
-    if(iNo < 0)
+    if(iNo <= 0)
     {
-
-        iNo = -iNo;
+        return;
     }
-    while(iCnt < iNo)
+      int iCnt = 0;
+      int iNum = 2;
+
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
     {
-        printf("*");
-        iCnt++;
+        printf("%d\t",iNum);
+        iNum = iNum + 2;
     }
 }
 int main()
 {
     int ivalue = 0;
 
-    printf("Enter number");
+    printf("Enter number\n");
     scanf("%d",&ivalue);
 
-    Display(ivalue);
+    PrintEven(ivalue);
 
     return 0;
 }

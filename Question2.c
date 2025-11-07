@@ -1,29 +1,38 @@
-/////////////////////////////////////////////////////////////////
-// 
-//  Required Header files
+
+///////////////////////////////////////////////////////////////////////////////////
 //
-/////////////////////////////////////////////////////////////////
+//  File Name       : Assignment3
+//  Description     : Accept the number from user and print factors of that number
+//  Author          : Gitanjali Meghanath Patil
+//  Date            : 21/10/2025
+//
+////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-void Display(int iNo)
+void DisplayFactor(int iNo)
 {
-    if(iNo < 0)
+    int i = 0;
+
+    if(iNo <= 0)
     {
         iNo = -iNo;
     }
-    while(iNo > 0)
+    for(i = 1; i <= iNo; i++)
     {
-        printf("*")
-        iNo--;
+        if(iNo % i == 0)
+        {
+            printf("%d\t",i);
+        }
     }
 }
 int main()
 {
     int ivalue = 0;
 
-    printf("Enter number :");
+    printf("Enter Number:\n");
     scanf("%d",&ivalue);
 
-    Display(ivalue);
+    DisplayFactor(ivalue);
+
     return 0;
 }
