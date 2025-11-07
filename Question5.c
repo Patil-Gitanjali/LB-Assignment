@@ -1,45 +1,37 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment4
-//  Description     : Accept Number  from user and Display Difference between Summation of all its factors & NonFactors
+//  File Name       : Assignment5
+//  Description     : Find Largest Among Three Numbers
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int FactDiff(int iNo)
-{ 
-
-    int iCnt = 0;
-    int iSumFact = 0;
-    int iSumNonFact = 0;
-
-    for(iCnt = 1; iCnt <iNo; iCnt++)
-    {
-        if(iNo % iCnt == 0)
-        {
-            iSumFact = iSumFact + iCnt;
-        }
-        else
-        {
-            iSumNonFact = iSumNonFact + iCnt;
-        }
-    }
-       return iSumFact - iSumNonFact;
+int FindLargest(int x, int y, int z)
+{
+   if(x > y && x > z)
+   {
+    return x;
+   }
+   else if (y > x && y > z)
+   {
+    return y;
+   }
+   else
+   {
+    return z;
+   }
 }
-
 int main()
 {
-    int ivalue = 0;
-    int iRet = 0;
+   int a,b,c,result;
 
-    printf("Enter number");
-    scanf("%d",&ivalue);
+   printf("Enter Three Number:");
+   scanf("%d %d %d",&a,&b,&c);
 
-    iRet = FactDiff(ivalue);
+   result = FindLargest(a,b,c);
+   printf("Largest number is : %d\n",result);
 
-    printf("%d",iRet);
-
-    return 0;
+   return 0;
 }

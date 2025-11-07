@@ -1,42 +1,32 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment4
-//  Description     : Accept Number  from user and Display Multiplication of its factors
+//  File Name       : Assignment5
+//  Description     : Take Number  from user and Check if its Even or not
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int MultFact(int iNo)
+void CheckEvenOdd(int num)
 {
-    int i = 0;
-    int iMult = 1;
-
-    if(iNo < 0)
+    if((num % 2)==0)
     {
-        iNo = -iNo;
+        printf("Number is Even");
     }
-    for(i = 1; i<= iNo/2; i++)
+    else
     {
-        if(iNo % i == 0)
-        {
-            iMult = iMult * i;
-        }
-    }   
-       return iMult;
+        printf("Number is Odd");
+    }
 }
 int main()
 {
-    int ivalue = 0;
-    int iRet = 0;
+    int number;
 
-    printf("Enter Number");
-    scanf("%d",&ivalue);
+    printf("Enter number:");
+    scanf("%d",&number);
 
-    iRet = MultFact(ivalue);
-
-    printf("%d\n",iRet);
+    CheckEvenOdd(number);
 
     return 0;
 }

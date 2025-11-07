@@ -1,37 +1,41 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment4
-//  Description     : Accept Number  from user and Display its Nonfactors 
+//  File Name       : Assignment5
+//  Description     : Check Leap year
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int NonFact(int iNo)
+void CheckLeapYear(int year)
 {
-    int i = 0;
-
-    if(iNo < 0)
-    {
-        iNo = -iNo;
-    }
-    for(i = 1; i < iNo; i++)
-    {
-        if(iNo % i != 0)
-        {
-            printf("%d\t", i);
-        }
-    }
+   if(year % 400 == 0)
+   {
+    printf("%d is a Leap Year.", year);
+   }
+   else if (year % 100 == 0)
+   {
+    printf("%d is Not a Leap Year.",year);
+   }
+   else if(year % 4 == 0)
+   {
+    printf("%d is a Leap Year.",year);
+   }
+   else
+   {
+    printf("%d is Not a Leap Year.",year);
+   }
 }
 int main()
 {
-    int ivalue = 0;
+    int yr;
 
-    printf("Enter Number");
-    scanf("%d",&ivalue);
+    printf("Enter Year:");
+    scanf("%d",&yr);
 
-    NonFact(ivalue);
+    CheckLeapYear(yr);
 
     return 0;
+    
 }
