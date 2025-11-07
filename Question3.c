@@ -4,23 +4,25 @@
 //
 /////////////////////////////////////////////////////////////////
 #include<stdio.h>
-
-void Display()
+int Display(int iNo)
 {
-    int i = 0;
-
-    i = 5;
-    while (i >= 1)
+    if(iNo < 10)
     {
-      printf("%d",i);
-        i--;
+        printf("Hello");
+    }
+    else
+    {
+        printf("Demo");
     }
 }
 int main()
 {
-    Display();
+    int ivalue = 0;
+
+    printf("Enter the number :");
+    scanf("%d",&ivalue);
+
+    Display(ivalue);
 
     return 0;
 }
-
-

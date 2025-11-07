@@ -1,39 +1,35 @@
-/////////////////////////////////////////////////////////////////
-// 
-//  Required Header files
-//
-/////////////////////////////////////////////////////////////////
 #include<stdio.h>
-#include<stdbool.h>
-bool Check(int iNo)
- {
-    if((iNo % 5)==0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
- }
- int main()
- {
-    int ivalue = 0;
-    bool bRet = false;
 
-    printf("Enter number");
+int Display(int iNo, int iFrequency)
+{
+    int i = 0;
+
+    if(iNo<0)
+    {
+        iNo=-iNo;
+    }
+    if(iFrequency<0)
+    {
+       iFrequency=-iFrequency;
+    }
+    for(i=0;i<iFrequency;i++)
+    {
+        printf("%d",iNo);
+    }
+}
+int main()
+{
+    int ivalue = 0;
+    int iCount = 0;
+
+    printf("Enter number:");
     scanf("%d",&ivalue);
 
-    bRet = Check(ivalue);   
+    printf("Enter Frequency:\n");
+    scanf("%d",&iCount);
 
-    if(bRet == true)
-    {
-        printf("Divisible by 5\n");
-    }
-    else
-    {
-        printf("Not Divisible by 5\n");
-    }
+    Display(ivalue,iCount);
 
-      return 0;
- }
+    return 0;
+
+}

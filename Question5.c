@@ -4,21 +4,37 @@
 //
 /////////////////////////////////////////////////////////////////
 #include<stdio.h>
-void Accept(int iNo)
-{
-    int iCnt = 0;
+#include<stdbool.h>
 
-    for(iCnt = 1; iCnt<=iNo; iCnt++)
+bool CheckEven(int iNo)
+{
+    if(iNo % 2 == 0)
     {
-        printf("*");
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 int main()
 {
     int ivalue = 0;
-    ivalue = 5;
+    bool bRet = false;
 
-    Accept(ivalue);
+    printf("Enter number:");
+    scanf("%d",&ivalue);
+ 
+    bRet = CheckEven(ivalue);
 
-    return 0;
+    if(bRet == true)
+    {
+        printf("%d is Even Number.\n",ivalue);
+    }
+    else
+    {
+        printf("%d is odd Number.\n",ivalue);
+    }
+
+      return 0;
 }

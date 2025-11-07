@@ -5,17 +5,25 @@
 /////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-void Display()
+void Display(int iNo)
 {
-    int i = 0;
-    for(i = 1; i <= 5; i++)
+    if(iNo < 0)
     {
-        printf("Marvellous\n");
+        iNo = -iNo;
+    }
+    while(iNo > 0)
+    {
+        printf("*")
+        iNo--;
     }
 }
 int main()
 {
-    Display();
+    int ivalue = 0;
 
+    printf("Enter number :");
+    scanf("%d",&ivalue);
+
+    Display(ivalue);
     return 0;
 }
