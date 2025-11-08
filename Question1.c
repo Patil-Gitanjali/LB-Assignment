@@ -1,42 +1,34 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment8
-//  Description     : Accept number from user and if it is 
-//                   its less than 50 print small
-//                   its greater than 50 & less than 100 print medium
-//                   its greater than 100 than print large 
+//  File Name       : Assignment9_1.c
+//  Description     : Accept one number from user and print that number of *****##### on the screen
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include<stdio.h>
-void Number(int iNo)
-{ 
-  if ((iNo) <= 50)
-  {
-    printf("It is small ");
-  }
 
-  else if ((iNo > 50) && (iNo < 100))
-  {
-    printf("It is medium");
-  }
-
-   else
-  {
-    printf("It is large ");
-  }
+void Display(int iNo)
+{
+    int i;
+    for(i = 1; i<= iNo; i++)
+    {
+        printf("*");
+    }
+    for(i = 1; i <= iNo; i++)
+    {
+        printf("#");
+    }
 }
 int main()
 {
-   int iValue1 = 0 ;
-   
-   printf("Enter Your number\n");
-   scanf("%d",&iValue1);
+    int ivalue = 0;
 
-  Number(iValue1);
+    printf("Enter number");
+    scanf("%d",&ivalue);
 
-  return 0;
+    Display(ivalue);
 
-
+    return 0;
 }
