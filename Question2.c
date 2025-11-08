@@ -1,33 +1,36 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment9_2.c
-//  Description     : Convert USD to INR 
+//  File Name       : Assignment10_2.c
+//  Description     : Accept Width & Height of Rectangle and calculate its Area 
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include<stdio.h>
-
-int DollarToINR(int iNo)
+float RecArea (float Height,float Width)
 {
-    int Result = 0;
-    int iValueOf1Dollar = 84;
-
-    iResult = iNo * iValueOf1Dollar;
-
-    return iResult;
+   float fArea = 0.0f;
+   fArea = Height * Width ;
+   return fArea;
 }
+
 int main()
 {
-    int iValue = 0, iRet = 0;
+   float fValue1 = 0.0f ;
+   float fValue2 = 0.0f ;
+   double dRet = 0.0f;
 
-    printf("Enter number of USD");
-    scanf("%d",&iValue);
+   printf("Enter Height of Rectangle\n");
+   scanf("%f",&fValue1);
 
-    iRet = DollarToINR(iValue);
+   printf("Enter Width of Rectangle\n");
+   scanf("%f",&fValue2);
 
-    printf("Value in INR is %d",iRet);
+  dRet = RecArea(fValue1,fValue2);
 
-    return 0;
+  printf("Area of Rectangle is : %lf ", dRet);
+
+  return 0;
+
+
 }

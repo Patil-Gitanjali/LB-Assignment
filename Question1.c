@@ -1,34 +1,32 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment9_1.c
-//  Description     : Accept one number from user and print that number of *****##### on the screen
+//  File Name       : Assignment10_1.c
+//  Description     : Accept Radius from user and return Area of its circle
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #include<stdio.h>
-
-void Display(int iNo)
+float Area (float Rad)
 {
-    int i;
-    for(i = 1; i<= iNo; i++)
-    {
-        printf("*");
-    }
-    for(i = 1; i <= iNo; i++)
-    {
-        printf("#");
-    }
+   float fAns = 0.0f;
+   fAns = 3.14 * Rad * Rad ;
+   return fAns;
 }
+
 int main()
 {
-    int ivalue = 0;
+   float fValue = 0.0f ;
+   float dRet = 0.0f;
 
-    printf("Enter number");
-    scanf("%d",&ivalue);
+   printf("Enter Radius\n");
+   scanf("%f",&fValue);
 
-    Display(ivalue);
+  dRet = Area(fValue);
 
-    return 0;
+  printf("Area of circle is : %f ", dRet);
+
+  return 0;
+
+
 }
