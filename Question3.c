@@ -1,42 +1,34 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment6
-//  Description     : Accept two numbers from user and check whether that numbers are equal to each other or not 
+//  File Name       : Assignment7
+//  Description     : Accept one number from user and print its number line
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 21/10/2025
+//  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#include<stdio.h>
-#include<stdbool.h>
 
-bool ChkEqual(int iNo1 ,int iNo2)
+#include<stdio.h>
+
+void Display(int iNo)
 {
-    if(iNo1 == iNo2)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+   int iCnt = 0;
+
+   if(iNo < 0)
+   {
+     iNo = -iNo;
+   }
+   for(iCnt = -iNo; iCnt <= iNo; iCnt++)
+   {
+      printf("%d",iCnt);
+   }
 }
 int main()
 {
-    int ivalue1 = 0, ivalue2 = 0;
-    bool bRet = false;
+    int ivalue = 0;
+    printf("Enter number");
+    scanf("%d",&ivalue);
 
-    printf("please enter two numbers:");
-    scanf("%d%d",&ivalue1,&ivalue2);
+    Display(ivalue);
 
-    bRet = ChkEqual(ivalue1,ivalue2);
-
-    if(bRet == true)
-    {
-        printf("Equal");
-    }
-    else
-    {
-        printf("Not Equal");
-    }
-      return 0;
+    return 0;
 }

@@ -1,19 +1,28 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment6
-//  Description     : Accept name from user and print the same name on screen
+//  File Name       : Assignment7
+//  Description     : Accept one number from user and print that number of $* on the screen 
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 21/10/2025
+//  Date            : 22/10/2025
 //
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
+void pattern(int iNo)
+{
+  int iCnt = 0;
+  for(iCnt = 1; iCnt <= iNo; iCnt++)
+  {
+    printf(" $ *");
+  }
+}
 int main()
 {
-    char Name[30];
-    printf("Please Enter Full Name");
-    scanf("%[^\n]",Name);
-    printf("Your Name is \t : %s",Name);
+    int ivalue = 0;
+    printf("Enter number");
+    scanf("%d",&ivalue);
+
+    pattern(ivalue);
 
     return 0;
 }

@@ -1,30 +1,31 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment6
-//  Description     : Accept Total mark & Obtained marks from user and Calculate percentage
+//  File Name       : Assignment7
+//  Description     : Accept one number from user and print 5 multiples of that number
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-float percentage(int obtainedMarks, int totalMarks)
+void MultipleDisplay(int iNo)
 {
-     return((float)obtainedMarks/totalMarks)*100;
+   int iCnt = 0;
+
+   if(iNo <= 0)
+   {
+      iNo = -iNo;
+   }
+   for(iCnt = 1; iCnt <= 5; iCnt++)
+   {
+      printf("%d", iNo * iCnt);
+   }
 }
 int main()
 {
-    int ivalue1 = 0, ivalue2 = 0;
-    float fRet = 0.0;
-
-    printf("please enter total marks");
-    scanf("%d",&ivalue1);
-
-    printf("please enter obtained marks");
-    scanf("%d",&ivalue2);
-
-    fRet = percentage(ivalue2,ivalue1);
-    printf("percentage = %f",fRet);
-
+    int ivalue = 0;
+    printf("Enter number");
+    scanf("%d",&ivalue);
+    MultipleDisplay(ivalue);
     return 0;
 }

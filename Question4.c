@@ -1,25 +1,36 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment6
-//  Description     : Accept Three numbers from user and print its Multiplication
+//  File Name       : Assignment7
+//  Description     : Accept one number from user and print all odd numbers till that number
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int multiplay(int iNo1 , int iNo2 , int iNo3)
+void OddDisplay(int iNo)
 {
-    int iResult = 0;
-    iResult = iNo1 * iNo2 * iNo3;
-    return iResult;
+   int iCnt = 0;
+
+   if(iNo < 0)
+   {
+      iNo = -iNo;
+   }
+   for(iCnt = 1; iCnt <= iNo; iCnt++)
+   {
+        if(iCnt % 2 != 0)
+        {
+            printf("%d",iCnt);
+        }
+   }
 }
 int main()
 {
-    int ivalue1 = 0, ivalue2 = 0, ivalue3 = 0, iRet = 0;
-    printf("please enter three numbers");
-    scanf("%d %d %d",&ivalue1,&ivalue2,&ivalue3);
-    iRet = multiplay(ivalue1 , ivalue2 , ivalue3);
-    printf("%d\n",iRet);
-    return 0; 
+    int ivalue = 0;
+    printf("Enter number");
+    scanf("%d",&ivalue);
+
+    OddDisplay(ivalue);
+
+    return 0;
 }
