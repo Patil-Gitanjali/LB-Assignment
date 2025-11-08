@@ -1,41 +1,42 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment5
-//  Description     : Check Leap year
+//  File Name       : Assignment6
+//  Description     : Accept two numbers from user and check whether that numbers are equal to each other or not 
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
+#include<stdbool.h>
 
-void CheckLeapYear(int year)
+bool ChkEqual(int iNo1 ,int iNo2)
 {
-   if(year % 400 == 0)
-   {
-    printf("%d is a Leap Year.", year);
-   }
-   else if (year % 100 == 0)
-   {
-    printf("%d is Not a Leap Year.",year);
-   }
-   else if(year % 4 == 0)
-   {
-    printf("%d is a Leap Year.",year);
-   }
-   else
-   {
-    printf("%d is Not a Leap Year.",year);
-   }
+    if(iNo1 == iNo2)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 int main()
 {
-    int yr;
+    int ivalue1 = 0, ivalue2 = 0;
+    bool bRet = false;
 
-    printf("Enter Year:");
-    scanf("%d",&yr);
+    printf("please enter two numbers:");
+    scanf("%d%d",&ivalue1,&ivalue2);
 
-    CheckLeapYear(yr);
+    bRet = ChkEqual(ivalue1,ivalue2);
 
-    return 0;
-    
+    if(bRet == true)
+    {
+        printf("Equal");
+    }
+    else
+    {
+        printf("Not Equal");
+    }
+      return 0;
 }

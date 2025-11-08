@@ -1,32 +1,19 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment5
-//  Description     : Take Number  from user and Check if its Even or not
+//  File Name       : Assignment6
+//  Description     : Accept name from user and print the same name on screen
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 21/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-void CheckEvenOdd(int num)
-{
-    if((num % 2)==0)
-    {
-        printf("Number is Even");
-    }
-    else
-    {
-        printf("Number is Odd");
-    }
-}
 int main()
 {
-    int number;
-
-    printf("Enter number:");
-    scanf("%d",&number);
-
-    CheckEvenOdd(number);
+    char Name[30];
+    printf("Please Enter Full Name");
+    scanf("%[^\n]",Name);
+    printf("Your Name is \t : %s",Name);
 
     return 0;
 }

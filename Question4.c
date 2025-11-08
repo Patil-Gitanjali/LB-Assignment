@@ -1,36 +1,25 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment5
-//  Description     : Check Positive Negative or Zero
+//  File Name       : Assignment6
+//  Description     : Accept Three numbers from user and print its Multiplication
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 21/10/2025
+//  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-void CheckNumberType(int num)
+int multiplay(int iNo1 , int iNo2 , int iNo3)
 {
-    if(num > 0)
-    {
-        printf("Number is Positive");
-    }
-    else if(num < 0)
-    {
-        printf("Number is Negative");
-    }
-    else
-    {
-        printf("Number is Zero");
-    }
+    int iResult = 0;
+    iResult = iNo1 * iNo2 * iNo3;
+    return iResult;
 }
 int main()
 {
-    int number;
-
-    printf("Enter number:");
-    scanf("%d",&number);
-
-    CheckNumberType(number);
-
-    return 0;
+    int ivalue1 = 0, ivalue2 = 0, ivalue3 = 0, iRet = 0;
+    printf("please enter three numbers");
+    scanf("%d %d %d",&ivalue1,&ivalue2,&ivalue3);
+    iRet = multiplay(ivalue1 , ivalue2 , ivalue3);
+    printf("%d\n",iRet);
+    return 0; 
 }

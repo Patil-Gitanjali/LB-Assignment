@@ -1,37 +1,30 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment5
-//  Description     : Find Largest Among Three Numbers
+//  File Name       : Assignment6
+//  Description     : Accept Total mark & Obtained marks from user and Calculate percentage
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 21/10/2025
+//  Date            : 22/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int FindLargest(int x, int y, int z)
+float percentage(int obtainedMarks, int totalMarks)
 {
-   if(x > y && x > z)
-   {
-    return x;
-   }
-   else if (y > x && y > z)
-   {
-    return y;
-   }
-   else
-   {
-    return z;
-   }
+     return((float)obtainedMarks/totalMarks)*100;
 }
 int main()
 {
-   int a,b,c,result;
+    int ivalue1 = 0, ivalue2 = 0;
+    float fRet = 0.0;
 
-   printf("Enter Three Number:");
-   scanf("%d %d %d",&a,&b,&c);
+    printf("please enter total marks");
+    scanf("%d",&ivalue1);
 
-   result = FindLargest(a,b,c);
-   printf("Largest number is : %d\n",result);
+    printf("please enter obtained marks");
+    scanf("%d",&ivalue2);
 
-   return 0;
+    fRet = percentage(ivalue2,ivalue1);
+    printf("percentage = %f",fRet);
+
+    return 0;
 }
