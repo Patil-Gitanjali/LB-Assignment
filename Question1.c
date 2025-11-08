@@ -1,28 +1,42 @@
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment7
-//  Description     : Accept one number from user and print that number of $* on the screen 
+//  File Name       : Assignment8
+//  Description     : Accept number from user and if it is 
+//                   its less than 50 print small
+//                   its greater than 50 & less than 100 print medium
+//                   its greater than 100 than print large 
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 22/10/2025
 //
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-
-void pattern(int iNo)
-{
-  int iCnt = 0;
-  for(iCnt = 1; iCnt <= iNo; iCnt++)
+void Number(int iNo)
+{ 
+  if ((iNo) <= 50)
   {
-    printf(" $ *");
+    printf("It is small ");
+  }
+
+  else if ((iNo > 50) && (iNo < 100))
+  {
+    printf("It is medium");
+  }
+
+   else
+  {
+    printf("It is large ");
   }
 }
 int main()
 {
-    int ivalue = 0;
-    printf("Enter number");
-    scanf("%d",&ivalue);
+   int iValue1 = 0 ;
+   
+   printf("Enter Your number\n");
+   scanf("%d",&iValue1);
 
-    pattern(ivalue);
+  Number(iValue1);
 
-    return 0;
+  return 0;
+
+
 }
