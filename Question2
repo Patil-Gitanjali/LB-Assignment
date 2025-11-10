@@ -1,48 +1,46 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment12
-//  Description     : Accept number from user and Count the total factors of that number 
-//  Author          : Gitanjali Meghanath Patil
+//  File Name       : Assignment13
+//  Description     : Accept number from user and print even  number till that number on screen
+//  Author          : Gitanjali Meghnath Patil
 //  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int Count_Factor( int iNo)
+void print_Even_Number(int ilimit)
+
 
 {
-   if (iNo <= 0)
+   if (ilimit <= 0)
    {
      return;
    }
 
    int iCnt = 0 ;
-   int iCount = 0 ;
-
    
-   for (iCnt = 1; iCnt <= iNo/2 ; iCnt++)
+   for (iCnt = 1; iCnt <= ilimit ; iCnt++)
    { 
-      if((iNo % iCnt)==0) 
+     
+    if((iCnt % 2 )== 0)
     {
-       iCount++;
+      printf("%d\t",iCnt);
+
     }
    }
-   return iCount;
 }
 
 int main()
 {
 
-    int iValue = 0;
-    int iRet = 0;
+    int iLimit = 0;
 
 
-    printf("Enter your number\n");
-    scanf("%d",&iValue);
 
-    iRet = Count_Factor(iValue);
-    printf("Number of factors is %d", iRet);
+    printf("Enter your limit\n");
+    scanf("%d",&iLimit);
 
-
+     print_Even_Number(iLimit);
+    
     return 0;
 }

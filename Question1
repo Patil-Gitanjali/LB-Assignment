@@ -1,42 +1,43 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment12
-//  Description     : Accept number from user and print factors of that number 
+//  File Name       : Assignment13
+//  Description     : Accept number from user and print number till that number on screen
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-void Print_Factor( int iNo)
+void print_Number(int ilimit)
+
 
 {
-   if (iNo <= 0)
+   if (ilimit <= 0)
    {
      return;
    }
 
    int iCnt = 0 ;
    
-   for (iCnt = 1; iCnt <= iNo/2 ; iCnt++)
+   for (iCnt = 1; iCnt <= ilimit ; iCnt++)
    { 
-      if((iNo % iCnt)==0) 
-    {
-       printf("%d\t",iCnt);
-    }
+     
+      printf("%d\t",iCnt);
+
    }
 }
 
 int main()
 {
 
-    int iValue = 0;
-
-    printf("Enter your number\n");
-    scanf("%d",&iValue);
-
-    Print_Factor(iValue);
+    int iLimit = 0;
 
 
+
+    printf("Enter your limit\n");
+    scanf("%d",&iLimit);
+
+     print_Number(iLimit);
+    
     return 0;
 }

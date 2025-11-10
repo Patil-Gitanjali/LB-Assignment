@@ -1,34 +1,31 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment12
-//  Description     : Accept number from user and return sum of even factors of that number 
+//  File Name       : Assignment13
+//  Description     : Accept number from user and print sum of numbers till that number on screen
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int Sum_Even_Factor( int iNo)
+int Sum_Of_Number(int ilimit)
+
 
 {
-   if (iNo <= 0)
+   if (ilimit <= 0)
    {
      return;
    }
 
    int iCnt = 0 ;
-   int iSum= 0 ;
+   int iSum = 0 ;
 
    
-   for (iCnt = 1; iCnt <= iNo/2 ; iCnt++)
+   for (iCnt = 1; iCnt <= ilimit ; iCnt++)
    { 
-      if((iNo % iCnt)==0) 
-    {
-        if((iCnt % 2 )== 0)
-       {
-       iSum = iSum + iCnt;
-       }
-    }
+     
+        iSum = iSum + iCnt;
+
    }
    return iSum;
 }
@@ -36,16 +33,14 @@ int Sum_Even_Factor( int iNo)
 int main()
 {
 
-    int iValue = 0;
+    int iLimit = 0;
     int iRet = 0;
 
+    printf("Enter your limit\n");
+    scanf("%d",&iLimit);
 
-    printf("Enter your number\n");
-    scanf("%d",&iValue);
-
-    iRet = Sum_Even_Factor(iValue);
-    printf("Sum of  even factors is %d", iRet);
-
+    iRet = Sum_Of_Number(iLimit);
+    printf("Sum of numbers is %d\n",iRet);
 
     return 0;
 }
