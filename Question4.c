@@ -1,30 +1,42 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment14
-//  Description     : Accept number from user and count Frequency of 4 in it
+//  File Name       : Assignment15
+//  Description     : Accept number from user and return multiplication of its digits 
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-int CountFrequency(int iNo)
+int MultDigits(int iNo)
 
 {
    int iDigit = 0;
-   int iCount = 0;
+   int iMult = 0;
 
+
+   if(iNo < 0)
+   {
+    iNo = -iNo;
+   }
+
+
+   iMult = 1;
    while (iNo != 0)
    {
-     iDigit = iNo % 10;
-
-     if(iDigit == 4)
+     iDigit = iNo % 10 ;
      {
-       iCount ++ ;
+
+     if(iDigit != 0)
+     
+     {
+        iMult  = iMult * iDigit;
      }
-     iNo = iNo/ 10;
-   }
-   return iCount ;
+     }
+
+        iNo = iNo /10;
+}
+return iMult;
 }
 
 int main()
@@ -36,9 +48,9 @@ int main()
     printf("Enter Number : ");
     scanf("%d",&iValue);
 
-   iRet = CountFrequency(iValue);
+   iRet = MultDigits(iValue);
    
-     printf("Frequency of 4 is %d ",iRet);
+   printf("Multiplication of digits is  %d ",iRet);
    
     
 }

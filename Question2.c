@@ -1,30 +1,34 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment14
-//  Description     : Accept number from user and check if it contains zero in it or not
+//  File Name       : Assignment15
+//  Description     : Accept number from user and return Frequency of odd digits in it
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-#include<stdbool.h>
 
-#define True 1
-#define False 0
-bool  CheckZero(int iNo)
+int CountOddFrequency(int iNo)
 
 {
    int iDigit = 0;
+   int iCount = 0;
+
+   if(iNo < 0)
+   {
+    iNo = -iNo;
+   }
+
    while (iNo != 0)
    {
      iDigit = iNo % 10;
-     if(iDigit == 0)
+     if((iDigit % 2)!=0)
      {
-        return True;
+       iCount ++ ;
      }
      iNo = iNo/ 10;
    }
-   return False ;
+   return iCount ;
 }
 
 int main()
@@ -36,14 +40,9 @@ int main()
     printf("Enter Number : ");
     scanf("%d",&iValue);
 
-   iRet = CheckZero(iValue);
-   if(iRet == True)
-   {
-    printf("It contains Zero\n");
-   }
-   else
-   {
-     printf("It doesnt contains Zero\n ");
-   }
+   iRet = CountOddFrequency(iValue);
+   
+     printf("Frequency of odd digits is %d ",iRet);
+   
     
 }
