@@ -1,32 +1,40 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment10_1.c
-//  Description     : Accept Radius from user and return Area of its circle
+//  File Name       : Assignment14
+//  Description     : Accept number from user and Display Digits in Reverse order
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 22/10/2025
+//  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-float Area (float Rad)
+
+int DisplayDigits(int iNo)
+
+
 {
-   float fAns = 0.0f;
-   fAns = 3.14 * Rad * Rad ;
-   return fAns;
+   int iDigit = 0;
+   while (iNo != 0)
+   {
+     iDigit = iNo % 10;
+     iNo = iNo/ 10;
+     printf("%d",iDigit);
+   }
+   
 }
 
 int main()
 {
-   float fValue = 0.0f ;
-   float dRet = 0.0f;
 
-   printf("Enter Radius\n");
-   scanf("%f",&fValue);
-
-  dRet = Area(fValue);
-
-  printf("Area of circle is : %f ", dRet);
-
-  return 0;
+    int iValue = 0;
+    int iRet = 0;
 
 
+
+
+    printf("Enter Number : ");
+    scanf("%d",&iValue);
+
+    DisplayDigits(iValue);
+    
+    return 0;
 }

@@ -1,32 +1,44 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment10_4.c
-//  Description     : Accept the Temperature in Farehniet and convert it into celsius
+//  File Name       : Assignment14
+//  Description     : Accept number from user and count Frequency of 4 in it
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 22/10/2025
+//  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-double FhtoCs(float fTemp)
+
+int CountFrequency(int iNo)
+
 {
-   float fCelsius =0.0f;
-   fCelsius = ((fTemp - 32 ) * (5.0/9.0));
-   return fCelsius;
+   int iDigit = 0;
+   int iCount = 0;
+
+   while (iNo != 0)
+   {
+     iDigit = iNo % 10;
+
+     if(iDigit == 4)
+     {
+       iCount ++ ;
+     }
+     iNo = iNo/ 10;
+   }
+   return iCount ;
 }
 
 int main()
 {
-   float fValue = 0.0f ;
-    double dRet = 0.0f;
+
+    int iValue = 0;
+    int iRet = 0;
+
+    printf("Enter Number : ");
+    scanf("%d",&iValue);
+
+   iRet = CountFrequency(iValue);
    
-
-   printf("Enter Temperature in Farehniets \n");
-   scanf("%f",&fValue);
-
-  dRet = FhtoCs(fValue);
-
-  printf("%f Farehniets is %f Celsius " ,fValue, dRet);
-
-  return 0;
-
+     printf("Frequency of 4 is %d ",iRet);
+   
+    
 }

@@ -1,33 +1,44 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment10_3.c
-//  Description     : Accept Distance in Km & convert it into meters
+//  File Name       : Assignment14
+//  Description     : Accept number from user and count Frequency of 2 in it
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 22/10/2025
+//  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-int DistanceKMtoMeters(int iNo)
+
+int CountFrequency(int iNo)
+
 {
-   int iMeters = 0;
-   iMeters = iNo * 1000;
-   return iMeters;
+   int iDigit = 0;
+   int iCount = 0;
+
+   while (iNo != 0)
+   {
+     iDigit = iNo % 10;
+
+     if(iDigit == 2)
+     {
+       iCount ++ ;
+     }
+     iNo = iNo/ 10;
+   }
+   return iCount ;
 }
 
 int main()
 {
-   int iValue = 0.0f ;
-     int iRet = 0.0f;
+
+    int iValue = 0;
+    int iRet = 0;
+
+    printf("Enter Number : ");
+    scanf("%d",&iValue);
+
+   iRet = CountFrequency(iValue);
    
-
-   printf("Enter Distance in km \n");
-   scanf("%d",&iValue);
-
-  iRet = DistanceKMtoMeters(iValue);
-
-  printf("%d Kilometers is %d meters" ,iValue, iRet);
-
-  return 0;
-
-
+     printf("Frequency of 2 is %d ",iRet);
+   
+    
 }

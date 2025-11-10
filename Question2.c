@@ -1,36 +1,49 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment10_2.c
-//  Description     : Accept Width & Height of Rectangle and calculate its Area 
+//  File Name       : Assignment14
+//  Description     : Accept number from user and check if it contains zero in it or not
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 22/10/2025
+//  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-float RecArea (float Height,float Width)
+#include<stdbool.h>
+
+#define True 1
+#define False 0
+bool  CheckZero(int iNo)
+
 {
-   float fArea = 0.0f;
-   fArea = Height * Width ;
-   return fArea;
+   int iDigit = 0;
+   while (iNo != 0)
+   {
+     iDigit = iNo % 10;
+     if(iDigit == 0)
+     {
+        return True;
+     }
+     iNo = iNo/ 10;
+   }
+   return False ;
 }
 
 int main()
 {
-   float fValue1 = 0.0f ;
-   float fValue2 = 0.0f ;
-   double dRet = 0.0f;
 
-   printf("Enter Height of Rectangle\n");
-   scanf("%f",&fValue1);
+    int iValue = 0;
+    int iRet = 0;
 
-   printf("Enter Width of Rectangle\n");
-   scanf("%f",&fValue2);
+    printf("Enter Number : ");
+    scanf("%d",&iValue);
 
-  dRet = RecArea(fValue1,fValue2);
-
-  printf("Area of Rectangle is : %lf ", dRet);
-
-  return 0;
-
-
+   iRet = CheckZero(iValue);
+   if(iRet == True)
+   {
+    printf("It contains Zero\n");
+   }
+   else
+   {
+     printf("It doesnt contains Zero\n ");
+   }
+    
 }

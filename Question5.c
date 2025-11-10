@@ -1,33 +1,44 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment10_5.c
-//  Description     : Accept Distance in SquareFeet into Squaremeters
+//  File Name       : Assignment14
+//  Description     : Accept number from user and return Frequency of  numbers less than 6 in it
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 22/10/2025
+//  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
-double SquareMeters (int iNo)
+
+int CountFrequency(int iNo)
+
 {
-   double dSquareMeters = 0;
-   dSquareMeters = iNo * 0.0929;
-   return dSquareMeters;
+   int iDigit = 0;
+   int iCount = 0;
+
+   while (iNo != 0)
+   {
+     iDigit = iNo % 10;
+
+     if(iDigit <= 6)
+     {
+       iCount ++ ;
+     }
+     iNo = iNo/ 10;
+   }
+   return iCount ;
 }
 
 int main()
 {
-   int  iValue = 0.0f ;
+
+    int iValue = 0;
+    int iRet = 0;
+
+    printf("Enter Number : ");
+    scanf("%d",&iValue);
+
+   iRet = CountFrequency(iValue);
    
-   double dRet = 0.0f;
-
-   printf("Enter Distance in SquareFeet\n");
-   scanf("%d",&iValue);
-
-  dRet = SquareMeters(iValue);
-
-  printf("%d SquareFeet is %lf Squaremeters",iValue,dRet);
-
-  return 0;
-
-
+     printf("Frequency of 6 is %d ",iRet);
+   
+    
 }
