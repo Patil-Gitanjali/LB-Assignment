@@ -1,45 +1,47 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment11
-//  Description     : Accept Range from user and print  all even  numbers in between that range on screen
+//  File Name       : Assignment12
+//  Description     : Accept number from user and Count the total factors of that number 
 //  Author          : Gitanjali Meghanath Patil
-//  Date            : 22/10/2025
+//  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
 
-void RangeDisplayEven(iNo1,iNo2)
+int Count_Factor( int iNo)
+
 {
-    int iCnt = 0 ;
+   if (iNo <= 0)
+   {
+     return;
+   }
 
-    if (iNo1 > iNo2)
-    {
-        printf("Invalid Range");
+   int iCnt = 0 ;
+   int iCount = 0 ;
 
-    }
-
-    for (iCnt = iNo1 ; iCnt <= iNo2 ; iCnt++)
+   
+   for (iCnt = 1; iCnt <= iNo/2 ; iCnt++)
+   { 
+      if((iNo % iCnt)==0) 
     {
-    if ((iCnt % 2)==0)
-    {
-        printf("%d\t ", iCnt);
+       iCount++;
     }
-    }
+   }
+   return iCount;
 }
 
 int main()
 {
 
-    int iValue1 = 0;
-    int iValue2 = 0;
+    int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter your starting number\n");
-    scanf("%d",&iValue1);
 
-    printf("Enter your Ending number\n");
-    scanf("%d",&iValue2);
+    printf("Enter your number\n");
+    scanf("%d",&iValue);
 
-    RangeDisplayEven(iValue1,iValue2);
+    iRet = Count_Factor(iValue);
+    printf("Number of factors is %d", iRet);
 
 
     return 0;

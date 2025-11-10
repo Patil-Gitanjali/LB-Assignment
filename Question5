@@ -1,46 +1,61 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  File Name       : Assignment11
-//  Description     : Accept Range from user and print numbers between that range on screen in reverse order 
+//  File Name       : Assignment12
+//  Description     : Accept number from user and check if its Divisible by 5
 //  Author          : Gitanjali Meghanath Patil
 //  Date            : 31/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include<stdio.h>
+#include<stdbool.h>
 
-void RangeDisplayRev(iNo1,iNo2)
+
+bool CheckDivisibe ( int iNo)
 
 {
-    int iCnt = 0 ;
+   if (iNo <= 0)
+   {
+     return;
+   }
 
-     if (iNo1 > iNo2 )
+   int iCnt = 0 ;
+   
+   for (iCnt = 1; iCnt <= iNo/2 ; iCnt++)
+   { 
+      if((iNo % 5)==0) 
     {
-        printf("Invalid Range");
+        return true;
+    }
+    else
+    {
+        return false;
     }
 
-    for (iCnt = iNo2; iCnt >= iNo1 ; iCnt--)
-    {
-       printf("%d\t",iCnt);
-    }
-    
+   }
 }
 
 int main()
 {
 
     int iValue1 = 0;
-    int iValue2 = 0;
-   
+    bool bRet = false;
 
 
-    printf("Enter your starting number\n");
+    printf("Enter your number\n");
     scanf("%d",&iValue1);
 
-    printf("Enter your Ending number\n");
-    scanf("%d",&iValue2);
+    bRet = CheckDivisibe(iValue1);
 
-    RangeDisplayRev(iValue1,iValue2);
+    if(bRet == true)
+    {
+        printf("It is Divisible by 5");
+    }
+    
+    else
 
-
+    {
+        printf("It is not  Divisible by 5");
+    }
+    
     return 0;
 }
