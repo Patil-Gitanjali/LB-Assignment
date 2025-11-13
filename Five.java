@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
 // 
 //  File name :     Five.java
-//  Description :   To calculate the power of a number using 
-//                  for loop
+//  Description :   To find the smallest digit in the given 
+//                  number
 //  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
@@ -10,21 +10,29 @@
 
 class Logic
 {
-    int CalculatePower(int iBase, int iExponent)
+    int FindLargestDigit(int iNo)
     {
-        int iResult = 1;
-        int iCnt = 0;
-        
-        if (iExponent < 0)
+        int iDigit = 0;
+        int iMin = 0;
+
+        if (iNo < 0)
         {
-            iExponent = -iExponent;
-        }
-        for (iCnt = 1; iCnt <= iExponent; iCnt++)
-        {
-            iResult = iResult * iBase;
+            iNo = -iNo;     
         }
 
-        return iResult;
+        while (iNo != 0)
+        {
+            iDigit = iNo % 10;     
+
+            if (iDigit < iMin)
+            {
+                iMin = iDigit;     
+            }
+
+            iNo = iNo / 10;
+        }
+
+        return iMin;
     }
 }
 
@@ -33,11 +41,11 @@ class five
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int base = 2;
-        int exponent = 5;
+        int iValue = 78325;
+        int iRet = 0;
 
-        int iRet = lobj.CalculatePower(base, exponent);
+        iRet = lobj.FindLargestDigit(iValue);
 
-        System.out.println(base + " raised to the power " + exponent + " is: " + iRet);
+        System.out.println("The smallest digit is: " + iRet);
     }
 }

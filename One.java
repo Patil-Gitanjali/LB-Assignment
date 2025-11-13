@@ -1,33 +1,28 @@
 ////////////////////////////////////////////////////////////
 // 
 //  File name :     one.java
-//  Description :   To check whether a given year is a leap 
-//                  year or not 
-//  Author :        Gitanjali Meghnath Patil
+//  Description :   To calculate Sum of all even Numbers 
+//                  upto N
+//  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
-class Logic
+class SumDigits
 {
-    void CheckLeapYear(int iYear)
+    int CalculateSumEven(int iNo)
     {
-        if (iYear % 400 == 0)
+        int iSum = 0;
+
+        for (int iCnt = 1; iCnt <= iNo; iCnt++)
         {
-            System.out.println(iYear + " is a Leap Year");
+            if (iCnt % 2 == 0)
+            {
+                iSum = iSum + iCnt;
+            }
         }
-        else if (iYear % 100 == 0)
-        {
-            System.out.println(iYear + " is not a Leap Year");
-        }
-        else if (iYear % 4 == 0)
-        {
-            System.out.println(iYear + " is a Leap Year");
-        }
-        else
-        {
-            System.out.println(iYear + " is not a Leap Year");
-        }
+
+        return iSum;
     }
 }
 
@@ -35,9 +30,11 @@ class one
 {
     public static void main(String A[])
     {
-        Logic lobj = new Logic();
-        int iValue = 2024;
+        int iRet = 0;
+        SumDigits sobj = new SumDigits();
 
-        lobj.CheckLeapYear(iValue);
+        iRet = sobj.CalculateSumEven(10);
+
+        System.out.println("Sum of all even numbers up to 10 is: " + iRet);
     }
 }

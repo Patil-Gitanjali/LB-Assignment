@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
 // 
 //  File name :     Three.java
-//  Description :   To check whether the number is divisible 
-//                  by 5 or 11
+//  Description :   To check whether the number is perfect 
+//                  number or not
 //  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
@@ -10,23 +10,25 @@
 
 class Logic
 {
-    void CheckDivisibile(int iNo)
+    boolean CheckPerfect(int iNo)
     {
-        if ((iNo % 5 == 0) && (iNo % 11 == 0))
+        int iSum = 0;
+        int iCnt = 0;
+        for (iCnt = 1; iCnt <= iNo / 2; iCnt++)
         {
-            System.out.println(iNo + " is divisible by both 5 and 11");
+            if (iNo % iCnt == 0)
+            {
+                iSum = iSum + iCnt;    
+            }
         }
-        else if (iNo % 5 == 0)
+
+        if (iSum == iNo)
         {
-            System.out.println(iNo + " is divisible by 5 only");
-        }
-        else if (iNo % 11 == 0)
-        {
-            System.out.println(iNo + " is divisible by 11 only");
+            return true;                
         }
         else
         {
-            System.out.println(iNo + " is not divisible by 5 or 11");
+            return false;
         }
     }
 }
@@ -36,8 +38,18 @@ class three
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iValue = 55;
+        int iValue = 28;
+        boolean bRet = false;
 
-        lobj.CheckDivisibile(iValue);
+        bRet = lobj.CheckPerfect(iValue);
+
+        if (bRet == true)
+        {
+            System.out.println(iValue + " is a Perfect Number.");
+        }
+        else
+        {
+            System.out.println(iValue + " is not a Perfect Number.");
+        }
     }
 }

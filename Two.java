@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
 // 
 //  File name :     Two.java
-//  Description :   To display grade of a student based on 
-//                  the student's marks
+//  Description :   To print numbers from N down to 1 in   
+//                  reverse order
 //  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
@@ -10,32 +10,13 @@
 
 class Logic
 {
-    char DisplayGrade(int iMarks)
+    int iCnt = 0;
+    void DisplayReverse(int iNo)
     {
-        char cGrade;
-
-        if (iMarks >= 90 && iMarks <= 100)
+        for (iCnt = iNo; iCnt >= 1; iCnt--)
         {
-            cGrade = 'A';
+            System.out.println(iCnt);
         }
-        else if (iMarks >= 75 && iMarks < 90)
-        {
-            cGrade = 'B';
-        }
-        else if (iMarks >= 60 && iMarks < 75)
-        {
-            cGrade = 'C';
-        }
-        else if (iMarks >= 40 && iMarks < 60)
-        {
-            cGrade = 'D';
-        }
-        else
-        {
-            cGrade = 'F'; 
-        }
-
-        return cGrade;
     }
 }
 
@@ -44,9 +25,9 @@ class two
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iMarks = 82;
+        int iValue = 10;
 
-        char cGrade = lobj.DisplayGrade(iMarks);
-        System.out.println("Grade: " + cGrade);
+        System.out.println("Numbers from " + iValue );
+        lobj.DisplayReverse(iValue);
     }
 }
