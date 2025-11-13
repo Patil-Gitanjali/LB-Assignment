@@ -1,39 +1,31 @@
 ////////////////////////////////////////////////////////////
 // 
 //  File name :     Four.java
-//  Description :   To find the sum of even and odd digits 
-//                  separately in a number
+//  Description :   To print each digit of a number separately
 //  Author :        Gitanjali Patil
-//  Date :          01/11/2025
+//  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
 class Logic
 {
-    void CalculateSumEvenOddDigits(int iNo)
+    void DisplayDigits(int iNo)
     {
         int iDigit = 0;
-        int iEvenSum = 0;
-        int iOddSum = 0;
+
+        if (iNo < 0)
+        {
+            iNo = -iNo;    
+        }
+
+        System.out.println("Digits of the number are:");
 
         while (iNo != 0)
         {
-            iDigit = iNo % 10;
-
-            if (iDigit % 2 == 0)
-            {
-                iEvenSum = iEvenSum + iDigit;
-            }
-            else
-            {
-                iOddSum = iOddSum + iDigit;
-            }
-
-            iNo = iNo / 10;
+            iDigit = iNo % 10;   
+            System.out.println(iDigit);
+            iNo = iNo / 10;      
         }
-
-        System.out.println("Sum of even digits: " + iEvenSum);
-        System.out.println("Sum of odd digits: " + iOddSum);
     }
 }
 
@@ -42,8 +34,8 @@ class four
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iValue = 12345;
+        int iValue = 9876;
 
-        lobj.CalculateSumEvenOddDigits(iValue);
+        lobj.DisplayDigits(iValue);
     }
 }

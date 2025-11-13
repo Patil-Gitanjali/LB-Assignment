@@ -1,33 +1,41 @@
 ////////////////////////////////////////////////////////////
-//
+// 
 //  File name :     Two.java
-//  Description :   To print all even numbers up to N
+//  Description :   To display grade of a student based on 
+//                  the student's marks
 //  Author :        Gitanjali Patil
-//  Date :          01/11/2025
+//  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
-import java.util.Scanner;
-
 class Logic
 {
-    void DisplayEvenNumbers(int iNo)
+    char DisplayGrade(int iMarks)
     {
-        int iCnt = 0;
+        char cGrade;
 
-        if (iNo < 0)
+        if (iMarks >= 90 && iMarks <= 100)
         {
-            iNo = -iNo;
+            cGrade = 'A';
+        }
+        else if (iMarks >= 75 && iMarks < 90)
+        {
+            cGrade = 'B';
+        }
+        else if (iMarks >= 60 && iMarks < 75)
+        {
+            cGrade = 'C';
+        }
+        else if (iMarks >= 40 && iMarks < 60)
+        {
+            cGrade = 'D';
+        }
+        else
+        {
+            cGrade = 'F'; 
         }
 
-        for (iCnt = 1; iCnt <= iNo; iCnt++)
-        {
-            if(iCnt % 2 == 0)
-            {
-                 System.out.print(iCnt + "\t");
-            }
-           
-        }
+        return cGrade;
     }
 }
 
@@ -35,13 +43,10 @@ class two
 {
     public static void main(String A[])
     {
-        Scanner sobj = new Scanner(System.in);
-        int iValue = 0;
-
-        System.out.println("Enter a number:");
-        iValue = sobj.nextInt();
-
         Logic lobj = new Logic();
-        lobj.DisplayEvenNumbers(iValue);
+        int iMarks = 82;
+
+        char cGrade = lobj.DisplayGrade(iMarks);
+        System.out.println("Grade: " + cGrade);
     }
 }

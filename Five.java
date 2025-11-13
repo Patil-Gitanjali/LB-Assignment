@@ -1,29 +1,30 @@
 ////////////////////////////////////////////////////////////
 // 
 //  File name :     Five.java
-//  Description :   To check whether a number is positive 
-//                  negative or zero
+//  Description :   To calculate the power of a number using 
+//                  for loop
 //  Author :        Gitanjali Patil
-//  Date :          01/11/2025
+//  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
 class Logic
 {
-    void CheckSign(int iNo)
+    int CalculatePower(int iBase, int iExponent)
     {
-        if (iNo > 0)
+        int iResult = 1;
+        int iCnt = 0;
+        
+        if (iExponent < 0)
         {
-            System.out.println("The number is Positive");
+            iExponent = -iExponent;
         }
-        else if (iNo < 0)
+        for (iCnt = 1; iCnt <= iExponent; iCnt++)
         {
-            System.out.println("The number is Negative");
+            iResult = iResult * iBase;
         }
-        else
-        {
-            System.out.println("The number is Zero");
-        }
+
+        return iResult;
     }
 }
 
@@ -32,8 +33,11 @@ class five
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iValue = -15;
+        int base = 2;
+        int exponent = 5;
 
-        lobj.CheckSign(iValue);
+        int iRet = lobj.CalculatePower(base, exponent);
+
+        System.out.println(base + " raised to the power " + exponent + " is: " + iRet);
     }
 }

@@ -1,32 +1,32 @@
 ////////////////////////////////////////////////////////////
-//
+// 
 //  File name :     Three.java
-//  Description :   To print all odd numbers up to N
+//  Description :   To check whether the number is divisible 
+//                  by 5 or 11
 //  Author :        Gitanjali Patil
-//  Date :          01/11/2025
+//  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
-import java.util.Scanner;
-
 class Logic
 {
-    void DisplayOddNumbers(int iNo)
+    void CheckDivisibile(int iNo)
     {
-        int iCnt = 0;
-
-        if (iNo < 0)
+        if ((iNo % 5 == 0) && (iNo % 11 == 0))
         {
-            iNo = -iNo;
+            System.out.println(iNo + " is divisible by both 5 and 11");
         }
-
-        for (iCnt = 1; iCnt <= iNo; iCnt++)
+        else if (iNo % 5 == 0)
         {
-            if(iCnt % 2 != 0)
-            {
-                 System.out.print(iCnt + "\t");
-            }
-           
+            System.out.println(iNo + " is divisible by 5 only");
+        }
+        else if (iNo % 11 == 0)
+        {
+            System.out.println(iNo + " is divisible by 11 only");
+        }
+        else
+        {
+            System.out.println(iNo + " is not divisible by 5 or 11");
         }
     }
 }
@@ -35,13 +35,9 @@ class three
 {
     public static void main(String A[])
     {
-        Scanner sobj = new Scanner(System.in);
-        int iValue = 0;
-
-        System.out.println("Enter a number:");
-        iValue = sobj.nextInt();
-
         Logic lobj = new Logic();
-        lobj.DisplayOddNumbers(iValue);
+        int iValue = 55;
+
+        lobj.CheckDivisibile(iValue);
     }
 }

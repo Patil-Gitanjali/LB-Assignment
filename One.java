@@ -1,35 +1,33 @@
 ////////////////////////////////////////////////////////////
-//
-//  File name :     One.java
-//  Description :   To check whether the number is prime or 
-//                  not
-//  Author :        Gitanjali Patil
-//  Date :          01/11/2025
+// 
+//  File name :     one.java
+//  Description :   To check whether a given year is a leap 
+//                  year or not 
+//  Author :        Gitanjali Meghnath Patil
+//  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
-import java.util.Scanner;
-
 class Logic
 {
-    boolean CheckPrime(int iNo)
+    void CheckLeapYear(int iYear)
     {
-        int iCnt = 0;
-
-        if (iNo <= 1)
+        if (iYear % 400 == 0)
         {
-            return false;
+            System.out.println(iYear + " is a Leap Year");
         }
-
-        for (iCnt = 2; iCnt <= iNo / 2; iCnt++)
+        else if (iYear % 100 == 0)
         {
-            if (iNo % iCnt == 0)
-            {
-                return false;
-            }
+            System.out.println(iYear + " is not a Leap Year");
         }
-
-        return true;
+        else if (iYear % 4 == 0)
+        {
+            System.out.println(iYear + " is a Leap Year");
+        }
+        else
+        {
+            System.out.println(iYear + " is not a Leap Year");
+        }
     }
 }
 
@@ -37,23 +35,9 @@ class one
 {
     public static void main(String A[])
     {
-        Scanner sobj = new Scanner(System.in);
-        int iValue = 0;
-        boolean bRet = false;
-
-        System.out.println("Enter a number:");
-        iValue = sobj.nextInt();
-
         Logic lobj = new Logic();
-        bRet = lobj.CheckPrime(iValue);
+        int iValue = 2024;
 
-        if (bRet == true)
-        {
-            System.out.println(iValue + " is a Prime Number");
-        }
-        else
-        {
-            System.out.println(iValue + " is not a Prime Number");
-        }
+        lobj.CheckLeapYear(iValue);
     }
 }
