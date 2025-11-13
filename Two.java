@@ -1,24 +1,32 @@
 ////////////////////////////////////////////////////////////
-// 
+//
 //  File name :     Two.java
-//  Description :   To check whether the number is Even 
-//                  or Odd
+//  Description :   To print all even numbers up to N
 //  Author :        Gitanjali Patil
-//  Date :          03/11/2025
+//  Date :          01/11/2025
 //
 ////////////////////////////////////////////////////////////
 
+import java.util.Scanner;
+
 class Logic
 {
-    boolean CheckEvenOdd(int iNo)
+    void DisplayEvenNumbers(int iNo)
     {
-        if (iNo % 2 == 0)
+        int iCnt = 0;
+
+        if (iNo < 0)
         {
-            return true;
+            iNo = -iNo;
         }
-        else
+
+        for (iCnt = 1; iCnt <= iNo; iCnt++)
         {
-            return false;
+            if(iCnt % 2 == 0)
+            {
+                 System.out.print(iCnt + "\t");
+            }
+           
         }
     }
 }
@@ -27,17 +35,13 @@ class two
 {
     public static void main(String A[])
     {
-        boolean bRet = false;
-        Logic lobj = new Logic();
-        bRet = lobj.CheckEvenOdd(10);
+        Scanner sobj = new Scanner(System.in);
+        int iValue = 0;
 
-        if (bRet == true)
-        {
-            System.out.println("The Number is an Even Number");
-        }
-        else
-        {
-            System.out.println("The Number is an Odd Number");
-        }
+        System.out.println("Enter a number:");
+        iValue = sobj.nextInt();
+
+        Logic lobj = new Logic();
+        lobj.DisplayEvenNumbers(iValue);
     }
 }
