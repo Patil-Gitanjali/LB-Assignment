@@ -1,35 +1,32 @@
 ////////////////////////////////////////////////////////////
-// 
+//
 //  File name :     Five.java
-//  Description :   To count number of digits in a given number
+//  Description :   Accept one number from user and 
+//                  print table of that number
 //  Author :        Gitanjali Patil
-//  Date :          01/11/2025
+//  Date :          03/11/2025
 //
 ////////////////////////////////////////////////////////////
 
+import java.util.Scanner;
+
 class Logic
 {
-    int CountDigits(int iNo)
+    void DisplayTable(int iNo)
     {
         int iCnt = 0;
+        int iMult = 0;
 
         if (iNo < 0)
         {
             iNo = -iNo;
         }
 
-        if (iNo == 0)
+        for (iCnt = 1; iCnt <= 10; iCnt++)
         {
-            return 1;
+            iMult = iNo * iCnt;
+            System.out.print(iMult + "\t");
         }
-
-        while (iNo != 0)
-        {
-            iNo = iNo / 10;  
-            iCnt++;          
-        }
-
-        return iCnt;
     }
 }
 
@@ -37,10 +34,13 @@ class five
 {
     public static void main(String A[])
     {
-        Logic lobj = new Logic();
-        int iValue = 7865;
-        int iRet = lobj.CountDigits(iValue);
+        Scanner sobj = new Scanner(System.in);
+        int iValue = 0;
 
-        System.out.println("The number of digits in " + iValue + " is: " + iRet);
+        System.out.println("Enter your number:");
+        iValue = sobj.nextInt();
+
+        Logic lobj = new Logic();
+        lobj.DisplayTable(iValue);
     }
 }
