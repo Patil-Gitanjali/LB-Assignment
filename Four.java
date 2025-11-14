@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
-// 
+//
 //  File name :     Four.java
-//  Description :   To find the largest digit in the given 
-//                  number
+//  Description :   To count total number of factors of a
+//                  given number
 //  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
@@ -10,29 +10,20 @@
 
 class Logic
 {
-    int FindLargestDigit(int iNo)
+    int CountFactors(int iNo)
     {
-        int iDigit = 0;
-        int iMax = 0;
+        int iCnt = 0;
+        int iCount = 0;
 
-        if (iNo < 0)
+        for (iCnt = 1; iCnt <= iNo; iCnt++)
         {
-            iNo = -iNo;     
-        }
-
-        while (iNo != 0)
-        {
-            iDigit = iNo % 10;     
-
-            if (iDigit > iMax)
+            if (iNo % iCnt == 0)
             {
-                iMax = iDigit;     
+                iCount++;
             }
-
-            iNo = iNo / 10;
         }
 
-        return iMax;
+        return iCount;
     }
 }
 
@@ -41,11 +32,11 @@ class four
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iValue = 78325;
+        int iValue = 12;
         int iRet = 0;
 
-        iRet = lobj.FindLargestDigit(iValue);
+        iRet = lobj.CountFactors(iValue);
 
-        System.out.println("The largest digit is: " + iRet);
+        System.out.println("Total number of factors is: " + iRet);
     }
 }

@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////
-// 
-//  File name :     Five.java
-//  Description :   To find the smallest digit in the given 
-//                  number
+//
+//  File name :     five.java
+//  Description :   To check whether the number is divisible 
+//                  by 2 or 3
 //  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
@@ -10,29 +10,24 @@
 
 class Logic
 {
-    int FindLargestDigit(int iNo)
+    void CheckDivisibleby2and3(int iNo)
     {
-        int iDigit = 0;
-        int iMin = 0;
-
-        if (iNo < 0)
+        if ((iNo % 2 == 0) && (iNo % 3 == 0))
         {
-            iNo = -iNo;     
+            System.out.println(iNo + " is divisible by both 2 and 3");
         }
-
-        while (iNo != 0)
+        else if (iNo % 2 == 0)
         {
-            iDigit = iNo % 10;     
-
-            if (iDigit < iMin)
-            {
-                iMin = iDigit;     
-            }
-
-            iNo = iNo / 10;
+            System.out.println(iNo + " is divisible by 2 only");
         }
-
-        return iMin;
+        else if (iNo % 3 == 0)
+        {
+            System.out.println(iNo + " is divisible by 3 only");
+        }
+        else
+        {
+            System.out.println(iNo + " is not divisible by 2 or 3");
+        }
     }
 }
 
@@ -41,11 +36,8 @@ class five
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iValue = 78325;
-        int iRet = 0;
+        int iValue = 30;
 
-        iRet = lobj.FindLargestDigit(iValue);
-
-        System.out.println("The smallest digit is: " + iRet);
+        lobj.CheckDivisibleby2and3(iValue);
     }
 }

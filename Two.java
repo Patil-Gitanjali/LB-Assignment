@@ -1,8 +1,9 @@
+
 ////////////////////////////////////////////////////////////
-// 
+//
 //  File name :     Two.java
-//  Description :   To print numbers from N down to 1 in   
-//                  reverse order
+//  Description :   To find out how many odd and even 
+//                  numbers are present between 1 and N
 //  Author :        Gitanjali Patil
 //  Date :          03/11/2025
 //
@@ -10,13 +11,26 @@
 
 class Logic
 {
-    int iCnt = 0;
-    void DisplayReverse(int iNo)
+    void CountEvenOddRange(int iNo)
     {
-        for (iCnt = iNo; iCnt >= 1; iCnt--)
+        int iCnt = 0;
+        int iEvenCount = 0;
+        int iOddCount = 0;
+
+        for (iCnt = 1; iCnt <= iNo; iCnt++)
         {
-            System.out.println(iCnt);
+            if (iCnt % 2 == 0)
+            {
+                iEvenCount++;
+            }
+            else if (iCnt % 2 != 0)
+            {
+                iOddCount++;
+            }
         }
+
+        System.out.println("Count of Even Numbers: " + iEvenCount);
+        System.out.println("Count of Odd Numbers: " + iOddCount);
     }
 }
 
@@ -25,9 +39,8 @@ class two
     public static void main(String A[])
     {
         Logic lobj = new Logic();
-        int iValue = 10;
+        int iValue = 50;
 
-        System.out.println("Numbers from " + iValue );
-        lobj.DisplayReverse(iValue);
+        lobj.CountEvenOddRange(iValue);
     }
 }
