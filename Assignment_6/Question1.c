@@ -1,0 +1,19 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  File Name       : Assignment6
+//  Description     : Accept name from user and print the same name on screen
+//  Author          : Gitanjali Meghanath Patil
+//  Date            : 21/10/2025
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include<stdio.h>
+
+int main()
+{
+    char Name[30];
+    printf("Please Enter Full Name");
+    scanf("%[^\n]",Name);
+    printf("Your Name is \t : %s",Name);
+
+    return 0;
+}
